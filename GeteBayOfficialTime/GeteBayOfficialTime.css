@@ -1,0 +1,14 @@
+
+/* Define the character set encoding in case aliens are visiting the page */
+@charset "utf-8";
+
+/* import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+
+.wrapper {
+	display: inline-block;
+	font-family: 'Roboto Mono', monospace;
+	background-color: #CCCCCC;
+	padding: 8px;
+}

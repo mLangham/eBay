@@ -103,7 +103,7 @@
 
 
         /* AddItem
-            Create and publish a new item listing and list it on an eBay site
+        // Create and publish a new item listing and list it on an eBay site
         */
         public function AddItem($eBay_AddItem = array()) {
             
@@ -251,6 +251,26 @@
             // return success XML data, or call error from eBay
             return $GetCategories;
 
+        }
+
+
+
+        /* GeteBayOfficialTime */
+        //  <!-- (No call-specific Input fields) -->
+        //
+        //
+        public function GeteBayOfficialTime() {
+
+            // assemble XML request string
+            $XML_GeteBayOfficialTime = "
+                <?xml version=\"1.0\" encoding=\"utf-8\" ?>
+                <GetMyeBaySellingRequest xmlns=\"urn:ebay:apis:eBLBaseComponents\"></GeteBayOfficialTimeRequest>";
+
+            // make the cURL call
+            $GeteBayOfficialTime = $this->cURL($this->uri_trading, "GeteBayOfficialTime", $XML_GeteBayOfficialTime);
+
+            // return success XML (converted to PHP) data, or call error from eBay
+            return $GeteBayOfficialTime;
         }
 
 
